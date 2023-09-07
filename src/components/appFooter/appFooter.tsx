@@ -57,7 +57,7 @@ const AppFooter = () => {
           ))}
         </div>
         <div className="flex-1 justify-center align-middle flex order-1 sm:order-none">
-          <Logo />
+          <Logo className="w-[7.5rem] h-[1.2488rem] sm:w-[9.25rem] sm:h-[1.5rem]" />
         </div>
         <div className="flex flex-row-reverse gap-x-32 flex-1 order-3 sm:order-none">
           {socials.map((social) => (

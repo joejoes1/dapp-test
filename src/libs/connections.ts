@@ -2,6 +2,7 @@ import { Web3ReactHooks } from '@web3-react/core';
 import { AddEthereumChainParameter, Connector } from '@web3-react/types';
 import { buildInjectedConnector } from './injected';
 import { CHAIN_INFO } from './chains';
+import { NoMetaMaskError } from '@web3-react/metamask';
 
 export interface Connection {
   connector: Connector;

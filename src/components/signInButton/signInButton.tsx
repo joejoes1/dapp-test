@@ -8,6 +8,8 @@ import truncateEthAddress from '@/utils/truncateAddress';
 import { useMemo } from 'react';
 import copyText from '@/utils/copyText';
 import * as s from './signInButton.module.scss';
+import { NoMetaMaskError } from '@web3-react/metamask';
+import { toast } from 'react-toastify';
 
 export interface ISignInButtonProps {
   className?: string;
@@ -25,7 +27,13 @@ const SignInButton = ({ className }: ISignInButtonProps) => {
   const loading = contextWeb3.isActivating;
 
   const handleLogin = async () => {
-    await tryActivateConnector(getConnection(connection).connector).catch(onConnectionError);
+    await tryActivateConnector(getConnection(connection).connector).catch((error: Error) => {
+      if (error instanceof NoMetaMaskError) {
+        toast(error.message, { type: 'warning', position: 'bottom-right' });
+      } else {
+        onConnectionError(error);
+      }
+    });
   };
 
   if (!isActive) {
