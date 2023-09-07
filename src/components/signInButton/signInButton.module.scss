@@ -1,0 +1,16 @@
+.copyIcon {
+  transition: .12s ease-in-out;
+}
+
+.userButton {
+  &:hover {
+    .copyIcon {
+      transform: translateY(-0.085rem);
+    }
+  }
+  &:active {
+    .copyIcon {
+      transform: translateY(0.085rem);
+    }
+  }
+}

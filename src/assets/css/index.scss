@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('./fonts.scss');
+
+#root {
+  height: 100vh;
+  width: 100vw;
+}
+
+@layer base {
+  html {
+    font-family: 'Manrope', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .app-offset-container {
+    @apply px-25 sm:px-45 lg:px-160;
+  }
+  .app-max-container {
+    @apply max-w-appFull;
+  }
+  .app-container {
+    @apply max-w-appFull px-25; 
+  }
+}

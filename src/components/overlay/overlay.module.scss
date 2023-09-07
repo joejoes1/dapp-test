@@ -1,0 +1,86 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  position: fixed;
+	background-size: 200% 200%;
+	background: linear-gradient(140deg, #3bc92239 0%, #b2f1de64 35%, #b2f1deb1 100%);
+	@media (min-width: 640px) {
+		animation: gradient 36s ease infinite;
+	}
+}
+
+.light {
+  top: 0;
+  left: 0;
+	width: 20px;
+	opacity: .15;
+	height: 20px;
+  position: absolute;
+	border-radius: 50%;
+}
+
+.light1 {
+  @extend .light;
+	background-color: #B2F1DE;
+	box-shadow: 0 0 16vh 16vh #B2F1DE;
+  transform: translateX(10vw) translateY(10vh) scale(2) rotate(65deg);
+	// animation: light1 48s infinite ease-in-out alternate-reverse;
+}
+.light2 {
+  @extend .light;
+  background-color: #3AC922;
+	box-shadow: 0 0 16vh 16vh #3AC922;
+  transform: translateX(90vw) translateY(10vh) scale(2) rotate(65deg);
+	// animation: light2 48s infinite ease-in-out alternate-reverse;
+}
+.light3 {
+  @extend .light;
+  background-color: #3AC922;
+  box-shadow: 0 0 16vh 16vh #3AC922;
+  transform: translateX(10vw) translateY(90vh) scale(2) rotate(65deg);
+  // animation: light3 48s infinite ease-in-out alternate-reverse;
+}
+.light4 {
+  @extend .light;
+  background-color: #B2F1DE;
+  box-shadow: 0 0 16vh 16vh #B2F1DE;
+  transform: translateX(100vw) translateY(100vh) scale(2) rotate(65deg);
+  // animation: light4 48s infinite ease-in-out alternate-reverse;
+}
+
+@keyframes light1 {
+	60% {
+		transform: translateX(100vw) translateY(100vh) scale(4) rotate(65deg);
+	}
+}
+@keyframes light2 {
+	60% {
+		transform: translateX(2vw) translateY(2vw) scale(4) rotate(65deg);
+	}
+}
+@keyframes light3 {
+	60% {
+		transform: translateX(90vw) translateY(2vw) scale(4) rotate(65deg);
+	}
+}
+@keyframes light4 {
+	60% {
+		transform: translateX(2vw) translateY(98vh) scale(4) rotate(65deg);
+	}
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
