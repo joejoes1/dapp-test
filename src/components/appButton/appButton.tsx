@@ -11,7 +11,7 @@ const AppButton = ({ children, className, ...props }: PropsWithChildren<IAppButt
     <a
       role="button"
       className={cn(
-        'outline-none text-base text-white px-35 py-10 bg-accentPrimary rounded-lg text-center cursor-pointer duration-150 ease-in-out shadow-button hover:bg-accentLight hover:shadow-hoverButton active:bg-assentState focus-visible:bg-accentPrimary focus-visible:shadow-focusButton',
+        'outline-none text-base sm:text-lg text-white px-35 py-7 sm:py-10 bg-accentPrimary rounded-lg text-center cursor-pointer duration-150 ease-in-out shadow-button hover:bg-accentLight hover:shadow-hoverButton active:bg-assentState focus-visible:bg-accentPrimary focus-visible:shadow-focusButton',
         className,
       )}
       {...props}

@@ -24,17 +24,17 @@ const SignInButton = ({ className }: ISignInButtonProps) => {
   const isActive = contextWeb3.isActive;
   const loading = contextWeb3.isActivating;
 
-  if (loading) {
-    return <span>...</span>;
-  }
-
   const handleLogin = async () => {
     await tryActivateConnector(getConnection(connection).connector).catch(onConnectionError);
   };
 
   if (!isActive) {
     return (
-      <AppButton tabIndex={0} className={cn(className)} onClick={handleLogin}>
+      <AppButton
+        tabIndex={0}
+        className={cn(className, { 'pointer-events-none opacity-70': loading })}
+        onClick={handleLogin}
+      >
         Connect Wallet
       </AppButton>
     );
